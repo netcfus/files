@@ -239,7 +239,6 @@ function Cart(){
 	};
 
 	me.paypalCheckout = function() {
-
 		var me = this,
 			winpar = "scrollbars,location,resizable,status",
 			strn  = "https://www.paypal.com/cgi-bin/webscr?cmd=_cart" +
@@ -252,7 +251,6 @@ function Cart(){
 			item,
 			optionsString,
 			field;
-
 
 		if( me.taxRate ){
 			strn = strn +
@@ -273,7 +271,6 @@ function Cart(){
 item.name = item.name.replace(/(\r\n|\n|\r)/gm," ");
 optionsString = optionsString.replace(/(\r\n|\n|\r)/gm," ");
 optionsString = optionsString.substring(0,180) + "...";
-alert(optionsString);
 			itemsString = itemsString	+ "&item_name_"		+ counter + "=" + item.name	 +
 										  "&item_number_"	+ counter + "=" + counter +
 										  "&quantity_"		+ counter + "=" + item.quantity +
@@ -297,6 +294,7 @@ alert(optionsString);
 
 		strn = strn + itemsString ;
 		window.open (strn, 'paypal', winpar);
+
 	};
 
 	me.googleCheckout = function() {
